@@ -1,65 +1,41 @@
 <template>
 <div class="container">
-  <h1>Hello VUE</h1>
 
-  <!-- form input to add content -->
-  <form>
-  <div class="form-group">
-    <label for="firstname">First Name</label>
-    <input type="text" class="form-control" id="firstName" aria-describedby="firstname" placeholder="First Name">
-
-    <label for="lastname">Last Name</label>
-    <input type="text" class="form-control" id="lastName" aria-describedby="lastname" placeholder="Last Name">
-
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<!-- -->
-
+  <h1>{{title}}</h1>
   <hr>
-  <table class="table mt-1h">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+  <br><br>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <add-user></add-user>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="mr-auto">
+        <app-filter></app-filter>
+        <appTable></appTable>
+      </div>
+    </div>
+  </div>
 
 </div>
 </template>
 
 <script>
+import Filter from './Filter'
+import AddUser from './AddUser'
+import Table from './Table'
+
 export default {
+  components: {
+    'AppFilter': Filter,
+    'addUser': AddUser,
+    'appTable': Table
+  },
   name: 'hello',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'Vuejs 2.0 - CRUD'
     }
   }
 }
@@ -67,7 +43,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.mt-1h {
-  margin-top: 100px;
-}
+  .f_ryt{
+    float: right;
+  }
 </style>
