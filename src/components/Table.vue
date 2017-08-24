@@ -1,5 +1,6 @@
 <template>
 <div>
+  <h1>{{msg}}</h1>
   <table class="table mt-1h">
     <thead class="thead-inverse">
       <tr>
@@ -21,35 +22,30 @@
           <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
         </td>
       </tr>
-      <!-- <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>
-          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
-          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td>
-          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
-          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-        </td>
-      </tr> -->
     </tbody>
   </table>
 
 </div>
 </template>
 <script>
-
+import { bus } from '../main'
 export default {
-  props: ['users']
+  data() {
+    return {
+      users: [
+        {firstname: 'Rohit', lastname: 'Yadav', email: '@rohit'},
+        {firstname: 'Nitin', lastname: 'Deni', email: '@nitin'},
+        {firstname: 'Sanjay', lastname: 'Saar', email: '@sanjay'}
+      ],
+      msg: 'table component'
+    }
+  },
+  // recieving bus event
+  created () {
+    bus.$on('emmitingUser', (data) => {
+      this.msg = data;
+    })
+  }
 }
 
 </script>

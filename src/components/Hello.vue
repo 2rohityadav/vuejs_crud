@@ -13,7 +13,7 @@
     <div class="col-lg-6">
       <div class="mr-auto">
         <app-filter></app-filter>
-        <appTable :users="users"></appTable>
+        <appTable></appTable>
       </div>
     </div>
   </div>
@@ -35,12 +35,7 @@ export default {
   name: 'hello',
   data() {
     return {
-      title: 'Vuejs 2.0 - CRUD',
-      users: [
-        {firstname: 'Rohit', lastname: 'Yadav', email: '@rohit'},
-        {firstname: 'Nitin', lastname: 'Deni', email: '@nitin'},
-        {firstname: 'Sanjay', lastname: 'Saar', email: '@sanjay'}
-      ]
+      title: 'Vuejs 2.0 - CRUD'
     }
   }
 }
