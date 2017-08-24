@@ -8,6 +8,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,18 +17,30 @@
         <td>Mark</td>
         <td>Otto</td>
         <td>@mdo</td>
+        <td>
+          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
+          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+        </td>
       </tr>
       <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
         <td>@fat</td>
+        <td>
+          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
+          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+        </td>
       </tr>
       <tr>
         <th scope="row">3</th>
         <td>Larry</td>
         <td>the Bird</td>
         <td>@twitter</td>
+        <td>
+          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
+          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
