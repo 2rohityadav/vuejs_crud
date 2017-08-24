@@ -1,6 +1,5 @@
 <template>
 <div>
-
   <table class="table mt-1h">
     <thead class="thead-inverse">
       <tr>
@@ -12,17 +11,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr v-for="user in users">
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
         <td>
           <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
           <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
         </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
@@ -41,14 +40,17 @@
           <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
           <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
         </td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 
 </div>
 </template>
-
 <script>
+
+export default {
+  props: ['users']
+}
 
 </script>
 
