@@ -1,6 +1,5 @@
 <template>
 <div>
-  <h1>{{msg}}</h1>
   <table class="table mt-1h">
     <thead class="thead-inverse">
       <tr>
@@ -43,7 +42,15 @@ export default {
   // recieving bus event
   created () {
     bus.$on('emmitingUser', (data) => {
-      this.msg = data;
+      console.log(data);
+      this.users.push({
+        firstname: data.firstName,
+        lastname: data.firstName,
+        email: data.email
+      });
+      data.firstName = "";
+      data.lastName = "";
+      data.email = "";
     })
   }
 }
