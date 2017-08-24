@@ -4,7 +4,7 @@
   <!-- form input to add content -->
   <form>
   <div class="form-group search">
-    <input type="text" class="form-control" id="search" aria-describedby="search" placeholder="Search...">
+    <input type="text" class="form-control" aria-describedby="search" placeholder="Search...">
   </div>
 </form>
 <!-- -->
