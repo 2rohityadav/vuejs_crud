@@ -1,10 +1,10 @@
 <template>
-<div>
-
+<div class="search">
+{{ msg }}
   <!-- form input to add content -->
   <form>
-  <div class="form-group search">
-    <input type="text" class="form-control" aria-describedby="search" placeholder="Search...">
+  <div class="form-group">
+    <input type="text" class="form-control" aria-describedby="search" placeholder="Search UserName...">
   </div>
 </form>
 <!-- -->
@@ -13,7 +13,14 @@
 </template>
 
 <script>
-
+import { bus } from '../main'
+export default {
+  data () {
+    return {
+      msg: 'filter component'
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

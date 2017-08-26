@@ -3,7 +3,7 @@
 
   <h1>{{title}}</h1>
   <hr>
-  <br><br>
+  <br>
 
   <div class="row">
     <div class="col-lg-6">

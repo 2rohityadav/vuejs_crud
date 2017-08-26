@@ -6,7 +6,7 @@
         <th>#</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Username</th>
+        <th>Email</th>
         <th></th>
       </tr>
     </thead>
@@ -17,8 +17,8 @@
         <td>{{ user.lastname }}</td>
         <td>{{ user.email }}</td>
         <td>
-          <button type="button" class="btn btn-outline-info btn-sm">Edit</button>
-          <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+          <button type="button" class="btn btn-outline-info btn-sm" @click="updateUser(user)">Edit</button>
+          <button type="button" class="btn btn-outline-danger btn-sm" @click="deleteUser()">Delete</button>
         </td>
       </tr>
     </tbody>
@@ -40,8 +40,9 @@ export default {
     }
   },
   // recieving bus event
-  created () {
-    bus.$on('emmitingUser', (data) => {
+  created() {
+    //do something after creating vue instance
+    bus.$on('e_addUser', (data) => {
       console.log(data);
       this.users.push({
         firstname: data.firstName,
@@ -52,6 +53,16 @@ export default {
       data.lastName = "";
       data.email = "";
     })
+  },
+  methods: {
+    deleteUser (index) {
+      this.users.splice(index, 1)
+    },
+  
+    updateUser(user) {
+      bus.$emit('e_updateuser', user)
+    }
+
   }
 }
 
