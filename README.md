@@ -1,6 +1,6 @@
 # crud
 
-> CRUD
+> CRUD - Using eventBus
 
 ## Build Setup
 
