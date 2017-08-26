@@ -26,6 +26,7 @@
     </div>
 
   <button type="button" class="btn btn-primary" @click="addUser()">Submit</button>
+  <button type="button" class="btn btn-primary" @click="save()">Save</button>
 </form>
 <!-- -->
 
@@ -35,7 +36,7 @@
 <script>
 import { bus } from '../main'
 export default {
-  data () {
+  data() {
     return {
       msg: 'add user components',
       newUsers: {
@@ -46,9 +47,21 @@ export default {
     }
   },
   methods: {
-    addUser () {
-      bus.$emit('emmitingUser', this.newUsers)
+    addUser() {
+      bus.$emit('e_addUser', this.newUsers)
+    },
+    save(user) {
+      console.log('save users: '+user);
     }
+  },
+  created() {
+    //do something after creating vue instance
+    bus.$on('e_updateuser', (user) => {
+      console.log(user);
+      this.newUsers.firstName = user.firstname;
+      this.newUsers.lastName = user.lastname;
+      this.newUsers.email= user.email;
+    })
   }
 }
 </script>
